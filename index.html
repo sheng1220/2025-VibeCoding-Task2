@@ -1,37 +1,343 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan Dong · 產品思維 × AI 實踐 = 價值創造</title>
+  <meta name="description" content="Ryan Dong 的個人品牌網站，展示產品管理專業、技術技能、實務專案作品集，以及如何透過 AI 工具提升產品價值。歡迎探索我的職涯歷程與聯絡方式。">
+  
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; max-width: 100%; }
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", Arial, sans-serif; line-height: 1.6; }
-    img { max-width: 100%; height: auto; display: block; }
-    .container { width: 1920px; margin: 0 auto; padding: 16px; }
-    nav a { margin-right: 12px; text-decoration: none; }
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-    .col-12 { grid-column: span 12; }
-    @media (min-width: 768px) { .col-md-6 { grid-column: span 6; } }
-    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    /* CSS:BASE-START */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      line-height: 1.6;
+      color: #e0e0e0;
+      background-color: #0a192f;
+    }
+    
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .section {
+      padding: 4rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #64ffda;
+    }
+    
+    main {
+      flex: 1;
+    }
+    
+    .site-header {
+      background-color: rgba(10, 25, 47, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #64ffda;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    
+    .nav-link {
+      color: #8892b0;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: #64ffda;
+    }
+    
+    footer {
+      background-color: #020c1b;
+      padding: 2rem 0;
+      text-align: center;
+      color: #8892b0;
+      font-size: 0.9rem;
+    }
+    /* CSS:BASE-END */
+    
+    /* CSS:HERO-START */
+    .section-hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+    }
+    
+    .hero-content {
+      width: 100%;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+      color: #ccd6f6;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #64ffda;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-description {
+      font-size: 1.1rem;
+      color: #8892b0;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    /* CSS:HERO-END */
+    
+    /* CSS:ABOUT-START */
+    .section-about {
+      background-color: #112240;
+    }
+    
+    .about-content {
+      color: #8892b0;
+      font-size: 1.05rem;
+    }
+    
+    .about-image {
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    /* CSS:ABOUT-END */
+    
+    /* CSS:SKILLS-START */
+    .section-skills {
+      background-color: #0a192f;
+    }
+    
+    .skills-placeholder {
+      color: #8892b0;
+      font-size: 1.05rem;
+    }
+    /* CSS:SKILLS-END */
+    
+    /* CSS:PROJECTS-START */
+    .section-projects {
+      background-color: #112240;
+    }
+    
+    .projects-placeholder {
+      color: #8892b0;
+      font-size: 1.05rem;
+    }
+    /* CSS:PROJECTS-END */
+    
+    /* CSS:CONTACT-START */
+    .section-contact {
+      background-color: #0a192f;
+    }
+    
+    .contact-placeholder {
+      color: #8892b0;
+      font-size: 1.05rem;
+    }
+    
+    .contact-links {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    
+    .contact-links li {
+      margin-bottom: 1rem;
+    }
+    
+    .contact-link {
+      color: #64ffda;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-link:hover {
+      color: #52e3c2;
+    }
+    /* CSS:CONTACT-END */
+    
+    /* CSS:RWD-START */
+    @media (min-width: 768px) {
+      .nav-links {
+        gap: 2rem;
+      }
+      
+      .nav-link {
+        font-size: 1rem;
+      }
+      
+      .hero-title {
+        font-size: 3.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .section {
+        padding: 5rem 0;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 4rem;
+      }
+      
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+    /* CSS:RWD-END */
   </style>
 </head>
 <body>
-  <header class="container" role="banner">
-    <nav aria-label="主選單">
-      <a href="#about">關於我</a>
-      <a href="#projects">作品集</a>
-      <a href="https://example.com/blog">技術部落格</a>
-      <a href="mailto:me@example.com">聯絡我</a>
-    </nav>
-    <h1>你好，我是小明：前端工程師新手之路</h1>
-    <h1>你好，我是小明：前端工程師新手之路</h1>
-    <p>歡迎來到我的個人網站！這裡整理了學習紀錄、Side Project 與實作心得。</p>
-  </header>
+  <div class="page">
+    <header class="site-header">
+      <nav class="nav">
+        <a href="#hero" class="nav-logo">Ryan Dong</a>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link">首頁</a></li>
+          <li><a href="#about" class="nav-link">關於我</a></li>
+          <li><a href="#skills" class="nav-link">技能</a></li>
+          <li><a href="#projects" class="nav-link">作品集</a></li>
+          <li><a href="#contact" class="nav-link">聯絡我</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <footer class="container" role="contentinfo">
-    <p>© 2025 My Portfolio · <a href="#">GitHub</a></p>
-    <img src="https://source.unsplash.com/600x200/?technology,abstract" alt="">
-  </footer>
+    <main>
+      <!-- SECTION:HERO-START -->
+      <section id="hero" class="section section-hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">產品思維 × AI 實踐 = 價值創造</h1>
+            <p class="hero-subtitle">Ryan Dong · 產品經理 · AI 實務應用者</p>
+            <p class="hero-description">
+              這是 Hero 區的占位內容。之後會用 Section SDD 的 Prompt 產生正式的一句話自我介紹、核心職稱角色、以及行動呼籲（例如：瀏覽作品集、下載履歷）。請把新的 section 程式碼整段貼在註解之間，完全取代這一區。
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION:HERO-END -->
+
+      <!-- SECTION:ABOUT-START -->
+      <section id="about" class="section section-about" aria-labelledby="about-heading">
+        <div class="container">
+          <h2 id="about-heading" class="section-title">關於我</h2>
+          <div class="about-content">
+            <p>這是 About 區的占位內容。之後會用 Section SDD 的 Prompt 產生更完整的個人背景介紹、工作經歷、專業特色等內容。</p>
+            <p>請把新的 section 程式碼整段貼在 SECTION:ABOUT-START 和 SECTION:ABOUT-END 註解之間，完全取代這一區。</p>
+          </div>
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=500&fit=crop" alt="在電腦前工作的產品經理，桌上有筆電和筆記本" loading="lazy">
+          </div>
+        </div>
+      </section>
+      <!-- SECTION:ABOUT-END -->
+
+      <!-- SECTION:SKILLS-START -->
+      <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
+        <div class="container">
+          <h2 id="skills-heading" class="section-title">技能專長</h2>
+          <div class="skills-placeholder">
+            <p>這是 Skills 區的占位內容。之後會用 Section SDD 的 Prompt 產生技能清單、專業工具、技術堆疊等內容。</p>
+            <p>請把新的 section 程式碼整段貼在 SECTION:SKILLS-START 和 SECTION:SKILLS-END 註解之間，完全取代這一區。</p>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION:SKILLS-END -->
+
+      <!-- SECTION:PROJECTS-START -->
+      <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
+        <div class="container">
+          <h2 id="projects-heading" class="section-title">作品集</h2>
+          <div class="projects-placeholder">
+            <p>這是 Projects 區的占位內容。之後會用 Section SDD 的 Prompt 產生專案卡片、作品描述、技術細節、成果展示等內容。</p>
+            <p>請把新的 section 程式碼整段貼在 SECTION:PROJECTS-START 和 SECTION:PROJECTS-END 註解之間，完全取代這一區。</p>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION:PROJECTS-END -->
+
+      <!-- SECTION:CONTACT-START -->
+      <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
+        <div class="container">
+          <h2 id="contact-heading" class="section-title">聯絡我</h2>
+          <div class="contact-placeholder">
+            <p>這是 Contact 區的占位內容。之後會用 Section SDD 的 Prompt 產生聯絡方式、社群連結、聯絡表單等內容。</p>
+            <p>請把新的 section 程式碼整段貼在 SECTION:CONTACT-START 和 SECTION:CONTACT-END 註解之間，完全取代這一區。</p>
+          </div>
+          <ul class="contact-links">
+            <li><a href="mailto:hello@example.com" class="contact-link">Email: hello@example.com</a></li>
+            <li><a href="https://github.com/ryandong" class="contact-link">GitHub: @ryandong</a></li>
+            <li><a href="https://www.linkedin.com/in/ryan" class="contact-link">LinkedIn: Ryan</a></li>
+          </ul>
+        </div>
+      </section>
+      <!-- SECTION:CONTACT-END -->
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Ryan.Dong. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
