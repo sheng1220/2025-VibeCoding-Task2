@@ -224,9 +224,99 @@
       background-color: #0a192f;
     }
     
-    .skills-placeholder {
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .skill-card {
+      background-color: #112240;
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(100, 255, 218, 0.3);
+    }
+    
+    .skill-card-title {
+      font-size: 1.4rem;
+      color: #64ffda;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .skill-category {
+      margin-bottom: 1.5rem;
+    }
+    
+    .skill-category:last-child {
+      margin-bottom: 0;
+    }
+    
+    .skill-category-name {
+      font-size: 1.1rem;
+      color: #ccd6f6;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    .skill-list {
+      list-style: none;
+    }
+    
+    .skill-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
       color: #8892b0;
-      font-size: 1.05rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    .skill-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #64ffda;
+      font-size: 1.1rem;
+    }
+    
+    .skill-goal {
+      background: linear-gradient(135deg, rgba(100, 255, 218, 0.05) 0%, rgba(100, 255, 218, 0.02) 100%);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 2px solid rgba(100, 255, 218, 0.2);
+      margin-bottom: 2rem;
+    }
+    
+    .skill-goal-title {
+      font-size: 1.4rem;
+      color: #64ffda;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .skill-goal-text {
+      color: #ccd6f6;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .skills-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     /* CSS:SKILLS-END */
     
@@ -311,6 +401,12 @@
       .about-image {
         flex: 0 0 35%;
       }
+      
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
     }
     
     @media (min-width: 1024px) {
@@ -387,9 +483,77 @@
       <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
         <div class="container">
           <h2 id="skills-heading" class="section-title">技能專長</h2>
-          <div class="skills-placeholder">
-            <p>這是 Skills 區的占位內容。之後會用 Section SDD 的 Prompt 產生技能清單、專業工具、技術堆疊等內容。</p>
-            <p>請把新的 section 程式碼整段貼在 SECTION:SKILLS-START 和 SECTION:SKILLS-END 註解之間,完全取代這一區。</p>
+          
+          <div class="skills-grid">
+            <div class="skill-card">
+              <h3 class="skill-card-title">🤖 AI 技術能力與實踐</h3>
+              
+              <div class="skill-category">
+                <div class="skill-category-name">機器學習與深度學習</div>
+                <ul class="skill-list">
+                  <li>深入理解機器學習原理（監督式、非監督式、強化學習）</li>
+                  <li>實作經驗：使用 TensorFlow、PyTorch 訓練與調優模型</li>
+                  <li>熟練掌握模型評估指標、過擬合處理與效能優化</li>
+                </ul>
+              </div>
+              
+              <div class="skill-category">
+                <div class="skill-category-name">電腦視覺應用</div>
+                <ul class="skill-list">
+                  <li>熟悉常見架構（YOLO、ResNet、Transformer 等）</li>
+                  <li>實際開發物件偵測與影像分類模型</li>
+                  <li>深入理解 AOI 品質檢測應用場景</li>
+                  <li>持續學習中：大語言模型（LLM）應用</li>
+                </ul>
+              </div>
+              
+              <div class="skill-category">
+                <div class="skill-category-name">AI 工具與開發</div>
+                <ul class="skill-list">
+                  <li>Python 開發與數據處理</li>
+                  <li>AI Agent 整合應用（n8n Level 1 & Level 2 認證）</li>
+                  <li>AI 輔助開發：熟練運用 ChatGPT、Claude、GitHub Copilot</li>
+                  <li>Vibe Coding：快速開發 MVP 與原型驗證</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="skill-card">
+              <h3 class="skill-card-title">🏭 製造業數位轉型經驗</h3>
+              
+              <div class="skill-category">
+                <div class="skill-category-name">光電製造產業深度（15+ 年）</div>
+                <ul class="skill-list">
+                  <li>產品完整生命週期管理（NPI → 試產 → 量產 → 優化）</li>
+                  <li>品質管理系統與良率優化實務</li>
+                  <li>供應鏈風險管理與成本控制</li>
+                  <li>流程標準化與效率提升</li>
+                  <li>跨功能專案管理（PMP 認證，管理 10+ 專案）</li>
+                </ul>
+              </div>
+              
+              <div class="skill-category">
+                <div class="skill-category-name">數據驅動決策</div>
+                <ul class="skill-list">
+                  <li>預測分析與資源優化</li>
+                  <li>建立監控系統降低庫存成本</li>
+                  <li>Excel-VBA 與 SAP 系統整合</li>
+                  <li>市場分析與產品策略規劃</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-goal">
+            <h3 class="skill-goal-title">💡 持續學習與職涯目標</h3>
+            <p class="skill-goal-text">
+              主動探索 AI 前沿技術，從電腦視覺擴展至大語言模型應用。正積極尋求將深度學習、電腦視覺等技術應用於製造業實際場景的機會，特別專注於品質檢測（AOI）與良率優化領域，致力於創造可衡量的商業價值。
+            </p>
+          </div>
+          
+          <div class="skills-actions">
+            <a href="#projects" class="btn">查看作品集</a>
+            <a href="#contact" class="btn">聯絡我</a>
           </div>
         </div>
       </section>
