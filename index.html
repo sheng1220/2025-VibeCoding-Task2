@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ryan Dong · 產品思維 × AI 實踐 = 價值創造</title>
-  <meta name="description" content="Ryan Dong 的個人品牌網站，展示產品管理專業、技術技能、實務專案作品集，以及如何透過 AI 工具提升產品價值。歡迎探索我的職涯歷程與聯絡方式。">
+  <meta name="description" content="Ryan Dong 的個人品牌網站,展示產品管理專業、技術技能、實務專案作品集,以及如何透過 AI 工具提升產品價值。歡迎探索我的職涯歷程與聯絡方式。">
   
   <style>
     /* CSS:BASE-START */
@@ -142,15 +142,80 @@
       background-color: #112240;
     }
     
+    .about-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
     .about-content {
       color: #8892b0;
       font-size: 1.05rem;
     }
     
+    .about-content p {
+      margin-bottom: 1.25rem;
+    }
+    
+    .about-highlights {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    
+    .about-highlights li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 1rem;
+      color: #ccd6f6;
+    }
+    
+    .about-highlights li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #64ffda;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    
+    .about-highlights strong {
+      color: #64ffda;
+      font-weight: 600;
+    }
+    
+    .about-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: transparent;
+      color: #64ffda;
+      text-decoration: none;
+      border: 2px solid #64ffda;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
+    }
+    
     .about-image {
-      margin: 2rem 0;
       border-radius: 8px;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
     }
     /* CSS:ABOUT-END */
     
@@ -232,6 +297,20 @@
       .section {
         padding: 5rem 0;
       }
+      
+      .about-wrapper {
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+      }
+      
+      .about-text {
+        flex: 0 0 60%;
+      }
+      
+      .about-image {
+        flex: 0 0 35%;
+      }
     }
     
     @media (min-width: 1024px) {
@@ -269,7 +348,7 @@
             <h1 class="hero-title">產品思維 × AI 實踐 = 價值創造</h1>
             <p class="hero-subtitle">Ryan Dong · 產品經理 · AI 實務應用者</p>
             <p class="hero-description">
-              這是 Hero 區的占位內容。之後會用 Section SDD 的 Prompt 產生正式的一句話自我介紹、核心職稱角色、以及行動呼籲（例如：瀏覽作品集、下載履歷）。請把新的 section 程式碼整段貼在註解之間，完全取代這一區。
+              這是 Hero 區的占位內容。之後會用 Section SDD 的 Prompt 產生正式的一句話自我介紹、核心職稱角色、以及行動呼籲(例如:瀏覽作品集、下載履歷)。請把新的 section 程式碼整段貼在註解之間,完全取代這一區。
             </p>
           </div>
         </div>
@@ -280,12 +359,25 @@
       <section id="about" class="section section-about" aria-labelledby="about-heading">
         <div class="container">
           <h2 id="about-heading" class="section-title">關於我</h2>
-          <div class="about-content">
-            <p>這是 About 區的占位內容。之後會用 Section SDD 的 Prompt 產生更完整的個人背景介紹、工作經歷、專業特色等內容。</p>
-            <p>請把新的 section 程式碼整段貼在 SECTION:ABOUT-START 和 SECTION:ABOUT-END 註解之間，完全取代這一區。</p>
-          </div>
-          <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=500&fit=crop" alt="在電腦前工作的產品經理，桌上有筆電和筆記本" loading="lazy">
+          <div class="about-wrapper">
+            <div class="about-text">
+              <div class="about-content">
+                <p>我是一位專注於產品策略與規劃的產品經理,目前致力於探索如何結合 AI 技術與市場洞察,讓企業在轉型過程中能以更有效的方式創造實際價值。我的主要技能涵蓋市場分析、產品路線圖規劃、跨部門協作與策略落地執行。</p>
+                <p>過去我曾參與多項產品開發專案,從需求訪談、功能定義到量產導入皆全程參與。我重視邏輯與溝通效率,喜歡以清晰的結構讓團隊在有限資源下仍能穩定推進;同時也相信每個產品決策都應以「市場真實需求」為核心。</p>
+                <ul class="about-highlights">
+                  <li><strong>產品策略與市場定位</strong>:協助釐清產品價值主張、定義市場切入點。</li>
+                  <li><strong>跨部門整合與專案推進</strong>:將策略目標轉化為具體行動計畫並確保落地。</li>
+                  <li><strong>AI 與智慧應用導入思維</strong>:協助企業探索如何在產品中融入 AI 元素以創造差異化。</li>
+                </ul>
+              </div>
+              <div class="about-actions">
+                <a href="#projects" class="btn">查看作品集</a>
+                <a href="#contact" class="btn">聯絡我</a>
+              </div>
+            </div>
+            <div class="about-image">
+              <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=600&h=700&fit=crop" alt="專注在筆電前撰寫程式碼的工程師" loading="lazy">
+            </div>
           </div>
         </div>
       </section>
@@ -297,7 +389,7 @@
           <h2 id="skills-heading" class="section-title">技能專長</h2>
           <div class="skills-placeholder">
             <p>這是 Skills 區的占位內容。之後會用 Section SDD 的 Prompt 產生技能清單、專業工具、技術堆疊等內容。</p>
-            <p>請把新的 section 程式碼整段貼在 SECTION:SKILLS-START 和 SECTION:SKILLS-END 註解之間，完全取代這一區。</p>
+            <p>請把新的 section 程式碼整段貼在 SECTION:SKILLS-START 和 SECTION:SKILLS-END 註解之間,完全取代這一區。</p>
           </div>
         </div>
       </section>
@@ -309,7 +401,7 @@
           <h2 id="projects-heading" class="section-title">作品集</h2>
           <div class="projects-placeholder">
             <p>這是 Projects 區的占位內容。之後會用 Section SDD 的 Prompt 產生專案卡片、作品描述、技術細節、成果展示等內容。</p>
-            <p>請把新的 section 程式碼整段貼在 SECTION:PROJECTS-START 和 SECTION:PROJECTS-END 註解之間，完全取代這一區。</p>
+            <p>請把新的 section 程式碼整段貼在 SECTION:PROJECTS-START 和 SECTION:PROJECTS-END 註解之間,完全取代這一區。</p>
           </div>
         </div>
       </section>
@@ -321,7 +413,7 @@
           <h2 id="contact-heading" class="section-title">聯絡我</h2>
           <div class="contact-placeholder">
             <p>這是 Contact 區的占位內容。之後會用 Section SDD 的 Prompt 產生聯絡方式、社群連結、聯絡表單等內容。</p>
-            <p>請把新的 section 程式碼整段貼在 SECTION:CONTACT-START 和 SECTION:CONTACT-END 註解之間，完全取代這一區。</p>
+            <p>請把新的 section 程式碼整段貼在 SECTION:CONTACT-START 和 SECTION:CONTACT-END 註解之間,完全取代這一區。</p>
           </div>
           <ul class="contact-links">
             <li><a href="mailto:hello@example.com" class="contact-link">Email: hello@example.com</a></li>
